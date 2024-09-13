@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Sebastián Ramírez</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Devicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.14.0/devicon.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    <style>
+        /* Efectos de animación */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hover-bounce:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Modo Oscuro */
+        body.dark-mode {
+            background-color: #1a202c;
+            color: white;
+        }
+
+        header.dark-mode {
+            background: linear-gradient(to right, #000000, #3b82f6);
+        }
+
+        /* Transiciones generales */
+        a {
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #e67e22;
+        }
+    </style>
+    <script>
+        let currentLang = 'es'; // Idioma predeterminado es español
+
+        // Función para cambiar entre modos oscuro y claro
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            document.querySelector('header').classList.toggle('dark-mode');
+        }
+
+        // Función para cambiar el idioma con las banderas
+        function changeLanguage() {
+            if (currentLang === 'es') {
+                document.querySelector('.greeting').textContent = "Hello! I'm Sebastián Ramírez";
+                document.querySelector('.occupation').textContent = "Software Engineering Student";
+                document.querySelector('.university').textContent = "Universidad Peruana de Ciencias Aplicadas";
+                document.querySelector('.description').textContent = "I am an enthusiastic student of Software Engineering at Universidad Peruana de Ciencias Aplicadas, passionate about learning and developing new skills. I am motivated by continuous growth and always seek opportunities to apply my knowledge to challenging projects. In my portfolio, you'll find examples of my work and experiences that reflect my dedication and commitment to professional development.";
+                document.querySelector('.contact-text').textContent = "Contact:";
+                document.querySelector('.projects-title').textContent = "Recent Projects";
+                document.querySelector('.skills-title').textContent = "Skills";
+                document.getElementById("flag").src = "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg";
+                currentLang = 'en';
+            } else {
+                document.querySelector('.greeting').textContent = "¡Hola! Soy Sebastián Ramírez";
+                document.querySelector('.occupation').textContent = "Estudiante de Ingeniería de Software";
+                document.querySelector('.university').textContent = "Universidad Peruana de Ciencias Aplicadas";
+                document.querySelector('.description').textContent = "Soy un estudiante entusiasta de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas, con pasión por aprender y desarrollar nuevas habilidades. Me motiva el crecimiento continuo y siempre estoy buscando oportunidades para aplicar mis conocimientos en proyectos desafiantes. En mi portafolio, encontrarás ejemplos de mi trabajo y experiencias que reflejan mi dedicación y compromiso con el desarrollo profesional.";
+                document.querySelector('.contact-text').textContent = "Contacto:";
+                document.querySelector('.projects-title').textContent = "Proyectos Recientes";
+                document.querySelector('.skills-title').textContent = "Habilidades";
+                document.getElementById("flag").src = "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg";
+                currentLang = 'es';
+            }
+        }
+
+        // Inicializar la página con el idioma correcto
+        window.onload = function() {
+            changeLanguage(); // Configura la bandera y el idioma inicial
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans transition-colors duration-500">
+
+    <!-- Header con enlaces y botones -->
+    <header class="bg-gradient-to-r from-green-400 to-blue-500 text-white py-6 transition-all duration-500">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Navegación -->
+            <nav class="space-x-6">
+                <a href="#skills" class="text-xl hover:underline">Habilidades</a>
+                <a href="#projects" class="text-xl hover:underline">Proyectos</a>
+            </nav>
+            <!-- Cambiar idioma y modo oscuro -->
+            <div class="flex space-x-6 items-center">
+                <button onclick="changeLanguage()" id="flag-button" class="text-xl">
+                    <img id="flag" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" class="w-8 h-8" alt="Flag">
+                </button>
+                <button onclick="toggleDarkMode()" class="text-xl">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de presentación -->
+    <section class="bg-gradient-to-r from-green-400 to-blue-500 text-white py-16">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl font-bold mb-4 fade-in greeting">¡Hola! Soy <span class="text-yellow-300">Sebastián Ramírez</span></h1>
+            <p class="text-xl mb-6 fade-in occupation">Estudiante de Ingeniería de Software</p>
+            <p class="text-lg mb-6 fade-in university">Universidad Peruana de Ciencias Aplicadas</p>
+            <p class="text-lg mb-6 fade-in description">Soy un estudiante entusiasta de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas, con pasión por aprender y desarrollar nuevas habilidades. Me motiva el crecimiento continuo y siempre estoy buscando oportunidades para aplicar mis conocimientos en proyectos desafiantes. En mi portafolio, encontrarás ejemplos de mi trabajo y experiencias que reflejan mi dedicación y compromiso con el desarrollo profesional.</p>
+            <div class="flex justify-center">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQE5T7_WM68Oag/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1701259053545?e=2147483647&v=beta&t=frOsMt1ZEKuryxcpT3Yz1BNRX28B6lR03_Lr3EBbYtY" alt="Foto de Sebastián" class="rounded-full w-40 h-40 shadow-lg hover-bounce">
+            </div>
+            <div class="flex justify-center mt-8 space-x-6 fade-in">
+                <a href="mailto:sebastian1987102@gmail.com" class="text-5xl hover:text-yellow-300"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/sebastián-ramírez-méndez-23594724b/" class="text-5xl hover:text-yellow-300"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yorusaurio" class="text-5xl hover:text-yellow-300"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Habilidades con Íconos -->
+    <section id="skills" class="py-20 bg-gray-100 dark:bg-gray-800 transition-colors duration-500">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-10 skills-title text-red-500">Habilidades</h2>
+
+            <!-- Front-End -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-left">Front-End</h3>
+                <div class="flex justify-center space-x-4">
+                    <span class="inline-flex items-center bg-gray-800 text-white py-2 px-4 rounded-lg">
+                        <i class="fab fa-vuejs mr-2"></i> Vue.js
+                    </span>
+                    <span class="inline-flex items-center bg-red-600 text-white py-2 px-4 rounded-lg">
+                        <i class="fab fa-angular mr-2"></i> AngularJS
+                    </span>
+                </div>
+            </div>
+
+            <!-- Back-End -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-left">Back-End</h3>
+                <div class="flex justify-center space-x-4">
+                    <span class="inline-flex items-center bg-purple-700 text-white py-2 px-4 rounded-lg">
+                        <i class="fab fa-microsoft mr-2"></i> .NET
+                    </span>
+                    <span class="inline-flex items-center bg-green-600 text-white py-2 px-4 rounded-lg">
+                        <i class="fas fa-leaf mr-2"></i> Spring
+                    </span>
+                </div>
+            </div>
+
+            <!-- Mobile Development -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-left">Desarrollo Móvil</h3>
+                <div class="flex justify-center space-x-4">
+                    <span class="inline-flex items-center bg-blue-500 text-white py-2 px-4 rounded-lg">
+                        <i class="fas fa-mobile-alt mr-2"></i> Flutter
+                    </span>
+                    <span class="inline-flex items-center bg-blue-800 text-white py-2 px-4 rounded-lg">
+                        <i class="fas fa-mobile mr-2"></i> Kotlin
+                    </span>
+                </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-left">Bases de Datos</h3>
+                <div class="flex justify-center space-x-4">
+                    <span class="inline-flex items-center bg-black text-white py-2 px-4 rounded-lg">
+                        <i class="fas fa-database mr-2"></i> MySQL
+                    </span>
+                    <span class="inline-flex items-center bg-green-600 text-white py-2 px-4 rounded-lg">
+                        <i class="fas fa-leaf mr-2"></i> MongoDB
+                    </span>
+                </div>
+            </div>
+
+            <!-- Programming Languages -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-left">Lenguajes de Programación</h3>
+                <div class="flex justify-center space-x-4">
+                    <span class="inline-flex items-center bg-yellow-500 text-black py-2 px-4 rounded-lg">
+                        <i class="fab fa-python mr-2"></i> Python
+                    </span>
+                    <span class="inline-flex items-center bg-blue-600 text-white py-2 px-4 rounded-lg">
+                        <i class="fab fa-js-square mr-2"></i> JavaScript
+                    </span>
+                    <span class="inline-flex items-center bg-blue-800 text-white py-2 px-4 rounded-lg">
+                        <i class="fab fa-node-js mr-2"></i> TypeScript
+                    </span>
+                    <span class="inline-flex items-center bg-blue-900 text-white py-2 px-4 rounded-lg">
+                        <i class="fas fa-code mr-2"></i> C++
+                    </span>
+                    <span class="inline-flex items-center bg-green-600 text-white py-2 px-4 rounded-lg">
+                        <i class="fas fa-code mr-2"></i> C#
+                    </span>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-left">Herramientas</h3>
+                <div class="flex justify-center space-x-4">
+                    <span class="inline-flex items-center bg-red-600 text-white py-2 px-4 rounded-lg">
+                        <i class="fas fa-file-alt mr-2"></i> Microsoft Office
+                    </span>
+                    <span class="inline-flex items-center bg-red-600 text-white py-2 px-4 rounded-lg">
+                        <i class="fab fa-git-alt mr-2"></i> Git
+                    </span>
+
+                    <span class="inline-flex items-center bg-purple-700 text-white py-2 px-4 rounded-lg">
+                        <i class="fas fa-paint-brush mr-2"></i> Figma
+                    </span>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-left">Idiomas</h3>
+                <div class="flex justify-center space-x-4">
+                    <span class="inline-flex items-center bg-red-600 text-white py-2 px-4 rounded-lg">
+                        <i class="fas fa-globe mr-2"></i> Español
+                    </span>
+                    <span class="inline-flex items-center bg-blue-500 text-white py-2 px-4 rounded-lg">
+                        <i class="fas fa-globe mr-2"></i> Inglés
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Sección de proyectos -->
+    <section id="projects" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-500">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-10 projects-title text-center">Proyectos Recientes</h2>
+            <div class="flex flex-col md:flex-row justify-between items-center md:space-x-10">
+                <!-- Project TecHelp Card -->
+                <div class="project-card bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-105 transform duration-300 w-full md:w-1/2 mb-8 md:mb-0">
+                    <div class="relative">
+                        <img src="https://i.ibb.co/kHhzHYC/imagen-2024-09-13-112145162.png" alt="TecHelp Project" class="w-full h-56 object-cover">
+                        <div class="absolute top-2 left-2 bg-white dark:bg-gray-700 px-2 py-1 rounded-full text-sm">
+                            TecHelp Project
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-4">TecHelp</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">TecHelp es una aplicación que gestiona visitas técnicas para la reparación de celulares. Los técnicos pueden ver sus ganancias y los usuarios gestionan su visita técnica y el estado del equipo de manera amigable.</p>
+                        <!-- Tech Stack Badges -->
+                        <div class="flex flex-wrap space-x-2 mb-4">
+                            <span class="flex items-center bg-red-500 text-white px-2 py-1 rounded text-sm">
+                                <i class="devicon-angularjs-plain mr-1"></i> Angular
+                            </span>
+                            <span class="flex items-center bg-green-500 text-white px-2 py-1 rounded text-sm">
+                                <i class="devicon-spring-plain mr-1"></i> Spring
+                            </span>
+                            <span class="flex items-center bg-blue-500 text-white px-2 py-1 rounded text-sm">
+                                <i class="devicon-html5-plain mr-1"></i> HTML
+                            </span>
+                            <span class="flex items-center bg-blue-700 text-white px-2 py-1 rounded text-sm">
+                                <i class="devicon-css3-plain mr-1"></i> CSS
+                            </span>
+                            <span class="flex items-center bg-blue-500 text-white px-2 py-1 rounded text-sm">
+                                <i class="devicon-mysql-plain mr-1"></i> MySQL
+                            </span>
+                            <span class="flex items-center bg-yellow-500 text-white px-2 py-1 rounded text-sm">
+                                <i class="devicon-amazonwebservices-plain mr-1"></i> AWS
+                            </span>
+                        </div>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Repositorio</a>
+                            <a href="https://logicversee.github.io/techelp-landing-page/index_en.html" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">Landing Page</a>
+                            <a href="#" class="bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700">App Web</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project VetCare Card -->
+                <div class="project-card bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-105 transform duration-300 w-full md:w-1/2">
+                    <div class="relative">
+                        <img src="https://i.ibb.co/VV6TxNL/imagen-2024-09-13-111220652.png" alt="VetCare Project" class="w-full h-56 object-cover">
+                        <div class="absolute top-2 left-2 bg-white dark:bg-gray-700 px-2 py-1 rounded-full text-sm">
+                            VetCare Project
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-4">VetCare</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">VetCare es una aplicación diseñada para facilitar la gestión de citas veterinarias. Además, ofrece una tienda en línea donde los usuarios pueden adquirir alimentos y accesorios para sus mascotas.</p>
+                        <!-- Tech Stack Badges -->
+                        <div class="flex flex-wrap space-x-2 mb-4">
+                            <span class="flex items-center bg-red-500 text-white px-2 py-1 rounded text-sm">
+                                <i class="devicon-html5-plain mr-1"></i> HTML
+                            </span>
+                            <span class="flex items-center bg-blue-500 text-white px-2 py-1 rounded text-sm">
+                                <i class="devicon-css3-plain mr-1"></i> CSS
+                            </span>
+                            <span class="flex items-center bg-yellow-500 text-white px-2 py-1 rounded text-sm">
+                                <i class="devicon-javascript-plain mr-1"></i> JavaScript
+                            </span>
+                            <span class="flex items-center bg-green-500 text-white px-2 py-1 rounded text-sm">
+                                <i class="devicon-vuejs-plain mr-1"></i> Vue.js
+                            </span>
+                            <span class="flex items-center bg-blue-700 text-white px-2 py-1 rounded text-sm">
+                                <i class="devicon-mysql-plain mr-1"></i> MySQL
+                            </span>
+                            <span class="flex items-center bg-blue-600 text-white px-2 py-1 rounded text-sm">
+                                <i class="devicon-azure-plain mr-1"></i> Microsoft Azure
+                            </span>
+                        </div>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Repositorio</a>
+                            <a href="https://cota-dreamers.github.io/VetCare-LandingPage/" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">Landing Page</a>
+                            <a href="https://vetcareupcoders.netlify.app" class="bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700">App Web</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto text-center">
+            <div class="flex flex-col items-center justify-center space-y-4">
+                <!-- Contact Info -->
+                <p class="text-lg font-semibold">¡Contáctame!</p>
+                <div class="flex space-x-4">
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/sebastián-ramírez-méndez-23594724b/" target="_blank" class="text-blue-500 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                    <!-- Gmail -->
+                    <a href="mailto:sebastian1987102@gmail.com" class="text-yellow-300 hover:text-white transition-colors duration-300">
+                        <i class="fas fa-envelope fa-2x"></i>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/yorusaurio" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Copyright Info -->
+            <div class="mt-8">
+                <p class="text-sm">&copy; 2024 Sebastián André Ramírez Méndez | Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
